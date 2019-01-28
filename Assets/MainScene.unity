@@ -389,7 +389,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100014, guid: b83b59e741ccb4f1b915545e2fa8ce5f, type: 3}
       propertyPath: m_Name
-      value: DefaultMouse@Running (3)
+      value: Player_Mouse
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: b83b59e741ccb4f1b915545e2fa8ce5f, type: 3}
       propertyPath: m_LocalPosition.x
