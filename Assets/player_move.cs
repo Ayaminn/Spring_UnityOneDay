@@ -20,6 +20,7 @@ public class player_move : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) {
             Debug.Log("スペース押された");
             animator.SetBool("jump", true);
+            transform.position += transform.TransformDirection(Vector3.forward) * 0.05f;
 
         } else if (Input.GetKey(KeyCode.RightArrow)) {
             Yrote = transform.eulerAngles.y + 1;
