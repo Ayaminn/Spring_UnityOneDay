@@ -17,33 +17,42 @@ public class player_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow)) {
+        if (Input.GetKey(KeyCode.Space)) {
+            Debug.Log("スペース押された");
+            animator.SetBool("jump", true);
+
+        } else if (Input.GetKey(KeyCode.RightArrow)) {
             Yrote = transform.eulerAngles.y + 1;
             transform.rotation = Quaternion.Euler(0, Yrote, 0);
             animator.SetBool("walk_f", false);
             animator.SetBool("walk_b", false);
+            animator.SetBool("jump", false);
         
         } else if (Input.GetKey(KeyCode.LeftArrow)) { 
             Yrote = transform.eulerAngles.y - 1;
             transform.rotation = Quaternion.Euler(0, Yrote, 0); 
             animator.SetBool("walk_f", false);
             animator.SetBool("walk_b", false);
+            animator.SetBool("jump", false);
 
         } else if (Input.GetKey(KeyCode.UpArrow)) {
             transform.position += transform.TransformDirection(Vector3.forward) * Speed;
 
             animator.SetBool("walk_f", true);
             animator.SetBool("walk_b", false);
+            animator.SetBool("jump", false);
         
         } else if (Input.GetKey(KeyCode.DownArrow)) {
             transform.position += transform.TransformDirection(Vector3.forward) * Speed * -0.1f;
 
             animator.SetBool("walk_b", true);
             animator.SetBool("walk_f", false);
+            animator.SetBool("jump", false);
 
         } else {
             animator.SetBool("walk_f", false);
             animator.SetBool("walk_b", false);
+            animator.SetBool("jump", false);
         }
     }
 }
